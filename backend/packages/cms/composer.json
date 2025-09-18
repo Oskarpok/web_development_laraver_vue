@@ -1,0 +1,12 @@
+{
+    "name": "op/cms",
+    "description": "CMS package for Laravel projects – administration panel and basic functions.",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Op\\Cms\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {}
+}
