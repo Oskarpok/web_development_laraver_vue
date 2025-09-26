@@ -23,6 +23,7 @@ class CmsServiceProvider extends ServiceProvider {
 	public function boot(): void {
     $this->loadRoutesFrom(self::CMS_ROOT_PATH . 'routes/web.php');
     $this->loadMigrationsFrom(self::CMS_ROOT_PATH . 'database/migrations');
+    $this->loadViewsFrom(self::CMS_ROOT_PATH .'resources/views', 'cms');
 	}
 
 }
