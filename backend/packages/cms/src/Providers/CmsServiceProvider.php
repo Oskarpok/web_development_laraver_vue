@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace User\LaravelCms\Providers;
+namespace Op\Cms\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
