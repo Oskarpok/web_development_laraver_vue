@@ -14,7 +14,7 @@ class CmsServiceProvider extends ServiceProvider {
 	 * Register any application services.
 	 */
 	public function register(): void {
-		$cmsConfig = require self::CMS_ROOT_PATH . 'config/';
+		// $cmsConfig = require self::CMS_ROOT_PATH . 'config/';
 	}
 
 	/**
