@@ -21,7 +21,7 @@ class CmsServiceProvider extends ServiceProvider {
 	 * Bootstrap any application services.
 	 */
 	public function boot(): void {
-    $this->loadRoutesFrom(self::CMS_ROOT_PATH . 'routes/api.php');
+    $this->loadRoutesFrom(self::CMS_ROOT_PATH . 'routes/web.php');
     $this->loadMigrationsFrom(self::CMS_ROOT_PATH . 'database/migrations');
 	}
 
