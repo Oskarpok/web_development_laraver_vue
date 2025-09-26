@@ -12,7 +12,7 @@
     "autoload": {
         "psr-4": {
             "Op\\Cms\\": "src/",
-            "Op\\Database\\Seeders\\": "op/database/seeders/"
+            "Op\\Database\\Seeders\\": "database/seeders/"
         }
     },
     "extra": {
