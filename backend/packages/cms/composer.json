@@ -2,11 +2,25 @@
     "name": "op/cms",
     "description": "CMS package for Laravel projects – administration panel and basic functions.",
     "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "version": "1.0.0",
+    "require": {
+
+    },
     "autoload": {
         "psr-4": {
-            "Op\\Cms\\": "src/"
+            "Op\\Cms\\": "src/",
+            "Op\\Database\\Seeders\\": "database/seeders/"
         }
     },
-    "minimum-stability": "stable",
-    "require": {}
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Op\\Cms\\Providers\\CmsServiceProvider"
+            ]
+        }
+    }
+
 }
