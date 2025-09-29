@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@source "../views";
+
+.cms-primary-color {
+  @apply bg-gray-900
+}
+
+.cms-secondary-color{
+  @apply text-green-400
+}
+
+.cms-background-color{
+  @apply bg-[#0f172a]
+}
+
+@layer base {
+  button {
+    @apply cursor-pointer;
+  }
+}
