@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: dockerfile
     container_name: laravel_app
-    working_dir: /var/www
+    working_dir: /var/www/html
     environment:
       - PROJECT=${PROJECT}
       - RUN_SEEDERS=${RUN_SEEDERS}
@@ -68,19 +68,37 @@ services:
     depends_on:
       - mysql
     
-  fr_node:
-    image: node:20
-    container_name: vue_node
-    working_dir: /var/www/html/frontend/${PROJECT}
+  # fr_node:
+  #   image: node:20
+  #   container_name: vue_node
+  #   working_dir: /var/www/html/frontend/${PROJECT}
+  #   environment:
+  #     - PROJECT=${PROJECT}
+  #   volumes:
+  #     - ../frontend/projects/${PROJECT}:/var/www/html/frontend/${PROJECT}
+  #     - ../frontend/packages/cms_ui:/var/www/packages/cms_ui
+  #     - ./.env:/docker/.env:ro
+  #   command: ["sh", "-c", "npm install && npm install dotenv && npm run dev -- --port 5174 --host 0.0.0.0"]
+  #   ports:
+  #     - "5174:5174"
+  #   networks:
+  #     - laravel
+  #   depends_on:
+  #     - app
+
+  node:
+    image: node:18
+    container_name: laravel_node
+    working_dir: /var/www/packages/cms
     environment:
-      - PROJECT=${PROJECT}
+      - APP_URL=http://localhost:8081
     volumes:
-      - ../frontend/projects/${PROJECT}:/var/www/html/frontend/${PROJECT}
-      - ../frontend/packages/cms_ui:/var/www/packages/cms_ui
+      - ../backend/projects/${PROJECT}:/var/www/html/${PROJECT}
+      - ../backend/packages/cms:/var/www/packages/cms
       - ./.env:/docker/.env:ro
-    command: ["sh", "-c", "npm install && npm install dotenv && npm run dev -- --port 5174 --host 0.0.0.0"]
+    command: ["sh", "-c", "npm install && npm install dotenv && npm run dev"]
     ports:
-      - "5174:5174"
+      - "5173:5173"
     networks:
       - laravel
     depends_on:
