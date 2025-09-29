@@ -72,7 +72,9 @@ trait DefaultController {
   public function index(Request $request): \Illuminate\View\View {
     $data = $this->indexPrepare($request);
     return view(static::CRUD_VIEWS . 'index', [
-      'data' => $data,
+
+
+      'title' => $this->titles()['index'] ?? '',
     ]);
   }
 
@@ -84,7 +86,7 @@ trait DefaultController {
    */
   public function create(): \Illuminate\View\View {
     return view(static::CRUD_VIEWS . 'create', [
-      //
+      'title' => $this->titles()['create'] ?? '',
     ]);
   }
 
@@ -106,7 +108,7 @@ trait DefaultController {
    */
   public function show(int $id): \Illuminate\View\View {
     return view(static::CRUD_VIEWS . 'show', [
-      //
+      'title' => $this->titles()['show'] ?? '',
     ]);
   }
 
@@ -118,7 +120,7 @@ trait DefaultController {
    */
   public function edit(int $id): \Illuminate\View\View {
     return view(static::CRUD_VIEWS . 'edit', [
-      //
+      'title' => $this->titles()['edit'] ?? '',
     ]);
   }
 
