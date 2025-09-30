@@ -4,7 +4,7 @@
   <div class="flex items-center justify-between mb-6 p-4 
     bg-[cms-background-color] rounded-lg shadow">
       <h1 class="text-xl font-semibold py-2">
-        Title
+        {!! $title !!}
       </h1>
       flasss message 
       <div class="flex gap-x-2">
