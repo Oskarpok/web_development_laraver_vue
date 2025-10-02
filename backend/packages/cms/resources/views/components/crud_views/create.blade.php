@@ -2,7 +2,7 @@
 @section('content')
 <div class="bg-gray-950 p-6 text-gray-200 rounded-2xl">
   <form method="POST"
-    action="{{ route() }}">
+    action="{{ }}">
     @csrf
     <div class="flex items-center justify-between mb-6 p-4
       bg-[cms-background-color] rounded-lg shadow">
