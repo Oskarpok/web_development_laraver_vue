@@ -72,9 +72,8 @@ trait DefaultController {
   public function index(Request $request): \Illuminate\View\View {
     $data = $this->indexPrepare($request);
     return view(static::CRUD_VIEWS . 'index', [
-
-
       'title' => $this->titles()['index'] ?? '',
+      'buttons' => $data['buttons'],
     ]);
   }
 

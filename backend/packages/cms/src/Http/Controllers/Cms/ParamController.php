@@ -6,6 +6,7 @@ namespace Op\Cms\Http\Controllers\Cms;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Op\Cms\View\FormFields\Buttons\ButtonsTypeController;
 
 class ParamController extends \Op\Cms\Http\Controllers\BaseController {
 
@@ -23,7 +24,14 @@ class ParamController extends \Op\Cms\Http\Controllers\BaseController {
 
   protected function indexPrepare(Request $request): array {
     return [
-      //
+      'buttons' => [
+        new ButtonsTypeController([
+          'type' => 'anchore',
+          'route' => self::ROUTE_NAME . 'create',
+          'label' => 'Dodaj parametr',
+          'icone' => 'fa-solid fa-plus',
+        ]),
+      ],
     ];
   }
 
