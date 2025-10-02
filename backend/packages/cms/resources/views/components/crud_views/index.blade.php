@@ -8,7 +8,10 @@
       </h1>
       flasss message 
       <div class="flex gap-x-2">
-        buttons
+        @foreach($buttons as $button)     
+          @continue(is_null($button))   
+          {!! $button->render() !!}
+        @endforeach
       </div>
   </div>
   <div class="overflow-x-auto">
