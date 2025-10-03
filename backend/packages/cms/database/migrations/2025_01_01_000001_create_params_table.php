@@ -12,7 +12,7 @@ return new class extends Migration {
     Schema::create('params', function (Blueprint $table) {
       $table->id();
       $table->string('name')->unique();
-      $table->string('type')->default(0); 
+      $table->integer('type')->default(0); 
       $table->string('val_string')->nullable();
       $table->integer('val_int')->nullable();
       $table->float('val_float')->nullable();
