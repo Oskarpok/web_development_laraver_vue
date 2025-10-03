@@ -4,15 +4,14 @@ declare(strict_types=1);
 
 namespace Op\Cms\Traits;
 
+use Illuminate\Http\Request;
+
 trait DefaultModel {
 
   /**
-   * To do add funcjonality to tabel apend i fillabe to give childer nto 
-   * expand this array on them
+   * To do add base tabel apend and fillabe and give childer to expand it
    */
-
-  protected $defaultAppends = ['is_active_label'];
-
+  // protected $defaultAppends = [];
   // protected $defaultFillable = [];
   
   /**

@@ -11,10 +11,10 @@ abstract class Base extends \Illuminate\Database\Eloquent\Model {
 
   use \Op\Cms\Traits\DefaultModel;
 
-  public function __construct(array $attributes = []) {
-    parent::__construct($attributes);
-    $this->appends = [...$this->defaultAppends, ...$this->appends ?? []];
-    // $this->fillable = [...$this->defaultFillable, ...$this->fillable ?? []];
-  }
+  // public function __construct(array $attributes = []) {
+  //   parent::__construct($attributes);
+  //   $this->appends = [...$this->defaultAppends, ...$this->appends ?? []];
+  //   // $this->fillable = [...$this->defaultFillable, ...$this->fillable ?? []];
+  // }
 
 }
