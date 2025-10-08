@@ -28,7 +28,7 @@ class ParamController extends \Op\Cms\Http\Controllers\BaseController {
         'id', 'name', 'type', 'value', 'created_at', 'updated_at',
       ])->get()->append(['type_label', 'value']), 
       'labels' => [
-        'Id', 'Name', 'Type', 'Value', 'Created at', 'Updated at', 'Actions',
+        'Id', 'Name', 'Type', 'Value', 'Created at', 'Updated at',
       ],
       'filterable' => [
         'id' => true, 'name' => true, 'type' => true, 'value' => false, 

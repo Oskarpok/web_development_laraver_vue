@@ -4,6 +4,7 @@
       @foreach($labels as $label)
         <th class="px-4 py-3 border border-gray-700"> {!! $label !!}</th>
       @endforeach
+      <th class="px-4 py-3 border border-gray-700">Actions</th>
     </tr>
     <tr>
       <form action="{{ route($destinations . 'index') }}"  
