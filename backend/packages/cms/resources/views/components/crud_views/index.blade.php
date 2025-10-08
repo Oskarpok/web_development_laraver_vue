@@ -15,7 +15,7 @@
       </div>
   </div>
   <div class="overflow-x-auto">
-    contend
+    {!! $table->render() !!}
   </div>
 </div>
 @endsection
