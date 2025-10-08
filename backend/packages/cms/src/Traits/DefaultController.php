@@ -29,7 +29,7 @@ trait DefaultController {
    * 
    * @var string
    */
-  protected const ROUTE_NAME = null;
+  protected const MODULE_NAME = null;
 
   /**
    * Return an array of form fields used in the create show edit views.
@@ -74,6 +74,13 @@ trait DefaultController {
     return view(static::CRUD_VIEWS . 'index', [
       'title' => $this->titles()['index'] ?? '',
       'buttons' => $data['buttons'],
+      'table' => new \Op\Cms\View\FormFields\Extra\Fields\TableControl([
+        'type' => 'intex',
+        'labels' => $data['labels'],
+        'filterable' => $data['filterable'],
+        'data' => $data['data'],
+        'destinations' => $data['destinations'],
+      ]),
     ]);
   }
 
