@@ -11,7 +11,7 @@ use Op\Cms\View\FormFields\Buttons\ButtonsTypeController;
 class ParamController extends \Op\Cms\Http\Controllers\BaseController {
 
   protected const MODEL_CLASS = \Op\Cms\Models\Cms\Param::class;
-  protected const MODULE_NAME = 'params';
+  protected const ROUTE_NAME = 'cms.params.';
 
   protected function titles(): array {
     return [
@@ -34,11 +34,11 @@ class ParamController extends \Op\Cms\Http\Controllers\BaseController {
         'id' => true, 'name' => true, 'type' => true, 'value' => false, 
         'created_at' => true, 'updated_at' => true,
       ], 
-      'destinations' => 'cms.' . self::MODULE_NAME . '.',
+      'destinations' => self::ROUTE_NAME,
       'buttons' => [
         new ButtonsTypeController([
           'type' => 'anchore',
-          'route' => 'cms.' . self::MODULE_NAME . '.create',
+          'route' => self::ROUTE_NAME . 'create',
           'label' => 'Dodaj parametr',
           'icone' => 'fa-solid fa-plus',
         ]),

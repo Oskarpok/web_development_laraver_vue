@@ -29,7 +29,7 @@ trait DefaultController {
    * 
    * @var string
    */
-  protected const MODULE_NAME = null;
+  protected const ROUTE_NAME = null;
 
   /**
    * Return an array of form fields used in the create show edit views.
