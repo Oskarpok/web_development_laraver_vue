@@ -5,16 +5,15 @@ declare(strict_types=1);
 namespace Op\Cms\Models\Cms;
 
 use Op\Cms\Enums\UsersType;
+use Op\Cms\Traits\DefaultModel;
 use Illuminate\Notifications\Notifiable;
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 
-
-class User extends Authenticatable {
+class User extends \Illuminate\Foundation\Auth\User {
 
   /** @use HasFactory<\Database\Factories\UserFactory> */
-  use HasFactory, Notifiable;
+  use HasFactory, Notifiable, DefaultModel;
 
   /**
    * The attributes that are mass assignable.
@@ -23,10 +22,10 @@ class User extends Authenticatable {
    */
   protected $fillable = [
     'first_name',
+    'is_active',
     'sur_name',
     'phone',
     'email',
-    'type',
   ];
 
   /**
@@ -38,5 +37,15 @@ class User extends Authenticatable {
     'password',
     'remember_token',
   ];
+
+  public static function validationRules(): array {
+    return [
+      //
+    ];
+  }
+
+  public function getTypeLabelAttribute(): string {
+    return UsersType::tryFrom($this->type)?->name ?? UsersType::Undefined->name;
+  }
 
 }
