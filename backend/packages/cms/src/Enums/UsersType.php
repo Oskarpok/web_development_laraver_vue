@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Op\Cms\Enums;
 
 enum UsersType: int {
+  case Undefined = 0;
   case Administrator = 1;
   case Owner = 2;
   case Manager = 3;

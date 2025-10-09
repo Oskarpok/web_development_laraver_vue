@@ -39,7 +39,7 @@ trait DefaultController {
   abstract protected function prepareFormFields(): array;
 
   /**
-   * Return an array of form fields used in the create show edit views.
+   * Return an array of vie index requaier data.
    *
    * @return array List of fields elements for the given controller.
    */
